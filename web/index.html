@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>List</title>
+	<script src="e.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="menu">
+		
+
+	</div>
+	<div id="root"></div>
+	<script>
+
+		(async function(){
+		//import maerli from './provas.js'
+		
+		class App extends Component{
+			constructor(props){
+				super(props)
+				this.state = 'xx'
+			}
+			//const [state,setState] = useState('maerli')
+			// useEffect(()=>{
+			// 	console.log(1)
+			// },[])
+			//setTimeout(()=>setState('pereira'), 1000)
+			render(props){
+				console.log(this)
+				return h('div', null, this.state, h('button', {onClick:()=>this.setState('lord')}, 'au'))
+			}
+			componentDidMount(){
+				console.log('hj')
+				//setTimeout(()=> this.setState('marcos'), 3000)
+			}
+		}
+
+		class Home extends Component{
+			constructor(props){
+				super(props)
+				this.state =  '1'
+			}
+			componentWillMount(){
+				console.log('will mount')
+			}
+			render(props){
+				//const [novo,setNovo] = useState('maerli')
+
+				// useEffect(()=>{
+				// 	console.log(1)
+				// },[])
+
+				//setTimeout(()=> setNovo('pereira'), 2000)
+				return h('div',null, h('h3',null, this.state)  ,h(App))
+			}
+			componentDidMount(){
+				console.log('hi')
+				//setTimeout(()=> this.setState(this.state + 1), 1000)
+			}
+		}
+
+		render(h(Home), document.querySelector('#root'))
+
+
+
+		// async function load(parentId){
+		// 	const data = await axios.get('http://localhost:5000/api/get/directory/parentId/'+parentId)
+		// 	var div = e('div', null,data.data.map(dir=>{
+		// 		return e('div', { 
+		// 			onClick:()=>{
+		// 				load(dir.id)
+		// 			},
+		// 			style:{
+		// 				cursor:"pointer"
+		// 			}
+		// 		}, dir.name)
+		// 	}))
+		// 	DOMRender(Fragment(div), '#root')
+		// }
+		// load(0)
+		})()
+		
+	</script>
+	<!-- <button id="reload"> reload </button> -->
+
+</body>
+</html>
